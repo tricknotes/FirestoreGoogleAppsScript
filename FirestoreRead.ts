@@ -102,7 +102,7 @@ class FirestoreRead {
     return documents.map((docItem: FirestoreAPI.BatchGetDocumentsResponse) => {
       const doc = docItem.found! as Document;
       doc.readTime = docItem.readTime;
-      return doc;
+      return new Document(doc, {} as Document);
     });
   }
 
